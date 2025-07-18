@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Cars - AutoMuse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-car-side"></i>
+                    <span>AutoMuse</span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li><a href="favorites.html" class="nav-link">My Garage</a></li>
+                        <li><a href="compare.html" class="nav-link active">Compare</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.html" class="btn btn-login">
+                        <i class="fas fa-user"></i>
+                        Login
+                    </a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Compare Section -->
+        <section class="compare">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Compare Cars</h1>
+                    <p class="section-subtitle">Select two cars to compare their specifications</p>
+                </div>
+                
+                <!-- Car Selection -->
+                <div class="car-selection">
+                    <div class="car-selector">
+                        <h3>Select First Car</h3>
+                        <select id="car1Select" class="car-select" aria-label="Select first car for comparison">
+                            <option value="">Choose a car...</option>
+                        </select>
+                    </div>
+                    <div class="vs-indicator">
+                        <span>VS</span>
+                    </div>
+                    <div class="car-selector">
+                        <h3>Select Second Car</h3>
+                        <select id="car2Select" class="car-select" aria-label="Select second car for comparison">
+                            <option value="">Choose a car...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Comparison Results -->
+                <div class="comparison-results" id="comparisonResults">
+                    <div class="comparison-placeholder">
+                        <i class="fas fa-balance-scale"></i>
+                        <p>Select two cars from the dropdowns above to start comparing</p>
+                    </div>
+                </div>
+                
+                <!-- Side-by-Side Comparison -->
+                <div class="side-by-side-comparison" id="sideBySideComparison" style="display: none;">
+                    <div class="comparison-container">
+                        <!-- Left Car -->
+                        <div class="car-side left-car">
+                            <div class="car-header">
+                                <img src="" alt="" class="car-main-image" id="leftCarImage">
+                                <h2 id="leftCarName"></h2>
+                                <p class="car-price" id="leftCarPrice"></p>
+                            </div>
+                            <div class="car-specs-side">
+                                <div class="spec-item">
+                                    <span class="spec-label">Horsepower</span>
+                                    <span class="spec-value" id="leftCarHP"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Engine</span>
+                                    <span class="spec-value" id="leftCarEngine"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Transmission</span>
+                                    <span class="spec-value" id="leftCarTransmission"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Drivetrain</span>
+                                    <span class="spec-value" id="leftCarDrivetrain"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Year</span>
+                                    <span class="spec-value" id="leftCarYear"></span>
+                                </div>
+                            </div>
+                            <div class="car-description-side">
+                                <h3>Description</h3>
+                                <p id="leftCarDescription"></p>
+                            </div>
+                            <div class="car-actions-side">
+                                <a href="" class="btn btn-primary" id="leftCarDetails">View Details</a>
+                                <button class="btn btn-secondary" onclick="addToFavorites('')" id="leftCarFavorite">
+                                    <i class="far fa-heart"></i> Add to Favorites
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- VS Divider -->
+                        <div class="vs-divider">
+                            <div class="vs-circle">
+                                <span>VS</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Car -->
+                        <div class="car-side right-car">
+                            <div class="car-header">
+                                <img src="" alt="" class="car-main-image" id="rightCarImage">
+                                <h2 id="rightCarName"></h2>
+                                <p class="car-price" id="rightCarPrice"></p>
+                            </div>
+                            <div class="car-specs-side">
+                                <div class="spec-item">
+                                    <span class="spec-label">Horsepower</span>
+                                    <span class="spec-value" id="rightCarHP"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Engine</span>
+                                    <span class="spec-value" id="rightCarEngine"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Transmission</span>
+                                    <span class="spec-value" id="rightCarTransmission"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Drivetrain</span>
+                                    <span class="spec-value" id="rightCarDrivetrain"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Year</span>
+                                    <span class="spec-value" id="rightCarYear"></span>
+                                </div>
+                            </div>
+                            <div class="car-description-side">
+                                <h3>Description</h3>
+                                <p id="rightCarDescription"></p>
+                            </div>
+                            <div class="car-actions-side">
+                                <a href="" class="btn btn-primary" id="rightCarDetails">View Details</a>
+                                <button class="btn btn-secondary" onclick="addToFavorites('')" id="rightCarFavorite">
+                                    <i class="far fa-heart"></i> Add to Favorites
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-car-side"></i>
+                        <span>AutoMuse</span>
+                    </div>
+                    <p>Discover the world's most beautiful and powerful automobiles in one place.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="favorites.html">My Garage</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/MUKILESH7" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoMuse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="scripts/carData.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/compare.js"></script>
+</body>
+</html>

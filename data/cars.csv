@@ -1,0 +1,7 @@
+id,name,brand,year,price,horsepower,engine,transmission,drivetrain,image,description
+1,BMW M3,BMW,2023,$85000,473,3.0L Twin-Turbo I6,8-Speed Automatic,RWD,https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400,The ultimate driving machine with exceptional performance and luxury
+2,Mercedes-AMG GT,Mercedes-Benz,2023,$125000,523,4.0L Biturbo V8,9-Speed Automatic,RWD,https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400,Pure performance with stunning design and cutting-edge technology
+3,Audi RS6 Avant,Audi,2023,$115000,591,4.0L Twin-Turbo V8,8-Speed Automatic,AWD,https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400,The ultimate performance wagon combining power with practicality
+4,Porsche 911,Porsche,2023,$135000,443,3.0L Twin-Turbo Flat-6,8-Speed PDK,RWD,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400,Iconic sports car with unmatched driving dynamics and heritage
+5,Tesla Model S,Tesla,2023,$95000,670,Dual Motor Electric,Single-Speed,AWD,https://images.unsplash.com/photo-1536700503339-1e4b06520771?w=400,Revolutionary electric performance with cutting-edge technology
+6,Ferrari F8 Tributo,Ferrari,2023,$275000,710,3.9L Twin-Turbo V8,7-Speed DCT,RWD,https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=400,Pure Italian passion with breathtaking performance and sound 
